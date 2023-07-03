@@ -1,9 +1,17 @@
 name: Build_CI
 
 on:
-  push:
-    branches: "*"
-    tags: "*"
+  workflow_dispatch:
+    inputs:
+      package-name:
+        description: Name of the plugin / binary.
+        required: false
+        default: "ReHopper"
+
+      version:
+        description: The release version tag to be included in the name.
+        required: true
+        default: v0.0.1-alpha
 
 jobs:
   build:
@@ -19,8 +27,8 @@ jobs:
         uses: thekaushikls/make-ghpy@v1.0.1
         with:
           source: src
-          package-name: my_plugin # Change this to the name of your plugin
-          version: v0.0.1-alpha # Change this to match your version number
+          package-name: ${{ github.event.inputs.package-name }}
+          version: ${{ github.event.inputs.version }}
           ironpython: true
       
       - name: Upload Artifact
