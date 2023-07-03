@@ -1,0 +1,31 @@
+name: Build_CI
+
+on:
+  push:
+    branches: "*"
+    tags: "*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/Checkout@v3
+      
+      - name: Build Plugin
+        id: build-plugin
+        uses: thekaushikls/make-ghpy@v1.0.1
+        with:
+          source: src
+          package-name: my_plugin # Change this to the name of your plugin
+          version: v0.0.1-alpha # Change this to match your version number
+          ironpython: true
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ steps.build-plugin.outputs.name }}
+          path: ${{ steps.build-plugin.outputs.build }}
+          if-no-files-found: error
