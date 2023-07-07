@@ -1,4 +1,4 @@
 # Rehopper
-[![.github/workflows/release_ci.yml](https://github.com/thekaushikls/rehopper/actions/workflows/release_ci.yml/badge.svg)](https://github.com/thekaushikls/rehopper/actions/workflows/release_ci.yml)
+[![Build_CI](https://github.com/NoDoubtsKleve/rehopper/actions/workflows/build_ci.yml/badge.svg)](https://github.com/NoDoubtsKleve/rehopper/actions/workflows/build_ci.yml)
 
 ###### A Grasshopper plugin to reload canvas.
