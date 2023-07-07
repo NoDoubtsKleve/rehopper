@@ -8,16 +8,18 @@ import System
 import traceback
 
 # - - - - LOCAL IMPORTS
-import reload
+import rehopper_utility
 
 # - - - - RH/GH IMPORTS
-import Grasshopper, GhPython
+import clr
+clr.AddReference("Grasshopper")
+import Grasshopper
+import GhPython
 
-# - - - - COMPONENTS
-
+# - - - - CLASS LIBRARY
 class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
 
-    Name = "ReHopper"
+    Name = "Rehopper"
     
     def get_icon(self):
         icon_text = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFvSURBVEhL7ZWxLgVREIY33ESpJRoFhUKnUKk8gkYjIqFS6EWh8wB4AI3CC9wXuNUtaJUi0ehEQkLwfTdnkutuVmZR3j/5Mjnn7Jk9OzszpxrrL5qEOdiHHrzCZ+ERrmANpqG1pmAPruEdwvEoL3AJS5CWzk/hGcLRLRzDNuzASZlz7QP6kNIEbMETuPkBdqFJB+BXrg9GCc2CpwnnG9CBJrk2U2xK/tCIuSdPb8yqCxHztpqH82JrWoUjiNjflLHzWZ2Be7U1LcM9+EDg2PmMNiHqROu4JmP+Bj6k/Sl7hrUIdzB8OMfOf5P5fwE+oHWc0QocgmF1r2F27HxNC6BzbVtF4Zko/ypT2YLTuSluqqeUKSLXLEaL0hdYpBZrSpa/bcDTNcm1cG7sbTO2m5Q8jY3MzcbXBmejs+HZ+CLm4dwGmU2MgWzBtmJbcjgaxZj7lb60lfOQl4mXipeLl0w4tpi8hPyhXkpeTmP9RlX1BUmPb3+17Y+kAAAAAElFTkSuQmCC"
@@ -34,16 +36,16 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         canvas_toolbar = self.get_canvas_toolbar()
 
         for item in canvas_toolbar.Items:
-            if item.Text == "Reload Grasshopper":
+            if item.Text == "Rehopper":
                 return
 
-        item = canvas_toolbar.Items.Add("Reload Grasshopper", icon, self.on_reload_button_clicked)
+        item = canvas_toolbar.Items.Add("Rehopper", icon, self.on_reload_button_clicked)
         item.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         item.ToolTipText = "Reload Grasshopper assemblies."
 
     def on_reload_button_clicked(self, sender, args):
         try:
-            reload.Reload()
+            rehopper_utility.ReloadGrasshopper()
         except Exception as ex:
             System.Windows.Forms.MessageBox.Show(str(ex), traceback.format_exc())
 
@@ -58,7 +60,7 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return AssemblyInfo.Name
 
     def get_AssemblyVersion(self):
-        return "0.0.1"
+        return "0.0.2"
 
     def get_AuthorName(self):
         return "No Doubts GmbH"
