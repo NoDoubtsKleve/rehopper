@@ -8,7 +8,7 @@ import System
 import traceback
 
 # - - - - LOCAL IMPORTS
-import rehopper_utility
+import reload_grasshopper
 
 # - - - - RH/GH IMPORTS
 import clr
@@ -45,7 +45,7 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
 
     def on_reload_button_clicked(self, sender, args):
         try:
-            rehopper_utility.ReloadGrasshopper()
+            reload_grasshopper.ReloadGrasshopper()
         except Exception as ex:
             System.Windows.Forms.MessageBox.Show(str(ex), traceback.format_exc())
 
