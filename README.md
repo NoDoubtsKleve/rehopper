@@ -32,7 +32,7 @@ _-PackageManager Search Rehopper
 
 ## 🎛️ Advanced Usage
 
-1. Download the [reload_grasshopper.py](src/reload_grasshopper.py)file, and add it to the `scripts` folder
+1. Download the [reload_grasshopper.py](src/reload_grasshopper.py) file, and add it to the `scripts` folder
    
     ```shell
     %AppData%\McNeel\Rhinoceros\7.0\scripts
