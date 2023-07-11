@@ -1,12 +1,17 @@
+---
 name: rehopper
-version: $version
+version: 1.0.0
 authors:
-  - Kaushik LS
-  - Pavel Furtsev
-description: >
-  Utility tool for Grasshopper-Python .ghpy plugin development.
-  Caches all currently open (and saved) Grasshopper (.gh / .ghx) files.
-  Unloads Grasshopper.dll from Rhino.
-  Reloads Grasshopper.dll and restores files from cache.
-  Provides a fancy button on the CanvasToolbar.
- url: "https://github.com/nodoubtskleve/rehopper"
+- Kaushik LS
+- Pavel Furtsev
+description: Utilty tool to reload assemblies and the Grasshopper canvas.
+url: https://github.com/nodoubtskleve/rehopper/
+icon: icon.png
+keywords:
+- development
+- python
+- plugin
+- reload
+- assembly
+- utility
+- toolbar
