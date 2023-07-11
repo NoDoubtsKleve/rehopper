@@ -8,10 +8,18 @@
 ## 🚀 Features
 
 * Utility tool for Grasshopper-Python `.ghpy` plugin development.
-* Caches all currently open Grasshopper (`.gh` / `.ghx`) files.
+* Caches all currently open (and saved) Grasshopper (`.gh` / `.ghx`) files.
 * Unloads `Grasshopper.dll` from Rhino.
 * Reloads `Grasshopper.dll` and restores files from cache.
 * Provides a fancy button on the `CanvasToolbar`.
+
+![Rehopper in Action](assets/rehopper_in_action.gif)
+
+## 🕹️ Basic Usage
+
+Drag and Drop the plugin (`rehopper.ghpy`) onto the Grasshopper canvas to get started.
+
+![Rehopper Toolbar Button](assets/rehopper_toolbar_button.png)
 
 ## 🎛️ Advanced Usage
 
