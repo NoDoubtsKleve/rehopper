@@ -1,3 +1,4 @@
+![Rehopper Icon](assets/rehopper_icon_200x200.png)
 # Rehopper v1.0.0
 ###### A Grasshopper plugin to reload canvas.
 
