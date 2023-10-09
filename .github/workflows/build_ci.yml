@@ -24,7 +24,7 @@ jobs:
       
       - name: Build Plugin
         id: build-plugin
-        uses: thekaushikls/make-ghpy@v1.0.1
+        uses: thekaushikls/make-ghpy@v1
         with:
           source: src
           package-name: ${{ github.event.inputs.package-name }}
