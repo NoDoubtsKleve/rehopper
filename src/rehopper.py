@@ -28,20 +28,21 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
     
     def get_canvas_toolbar(self):
         all_toolbars = Grasshopper.Instances.ActiveCanvas.Parent.Controls
-        canvas_toolbar = all_toolbars.Item[all_toolbars.IndexOfKey("CanvasToolbar")]
+        #canvas_toolbar = all_toolbars.Item[all_toolbars.IndexOfKey("CanvasToolbar")]
+        canvas_toolbar = all_toolbars["CanvasToolbar"]
         return canvas_toolbar
 
     def add_reload_button(self, args):
-        icon = self.get_icon()
         canvas_toolbar = self.get_canvas_toolbar()
 
         for item in canvas_toolbar.Items:
             if item.Text == "Rehopper":
                 return
 
-        item = canvas_toolbar.Items.Add("Rehopper", icon, self.on_reload_button_clicked)
+        item = canvas_toolbar.Items.Add("Rehopper", None, self.on_reload_button_clicked)
         item.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         item.ToolTipText = "Reload Grasshopper assemblies."
+        item.Image = self.get_icon()
 
     def on_reload_button_clicked(self, sender, args):
         try:
@@ -60,7 +61,7 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return AssemblyInfo.Name
 
     def get_AssemblyVersion(self):
-        return "0.0.2"
+        return "1.1.0"
 
     def get_AuthorName(self):
         return "No Doubts GmbH"
