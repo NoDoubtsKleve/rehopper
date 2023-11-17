@@ -14,8 +14,9 @@
 * Reloads `Grasshopper.dll` and restores files from cache.
 * Provides a fancy button on the `CanvasToolbar`.
 
-![Rehopper in Action](assets/rehopper_in_action.gif)
+![Rehopper in Action - Win](assets/rehopper_in_action.gif)
 
+![Rehopper in Action - Mac](assets/rehopper_in_action_mac.gif)
 ## 📦 Get Rehopper
 
 Download the latest version from the [Yak PackageManager](https://developer.rhino3d.com/guides/yak/what-is-yak/) or from the [releases](https://github.com/NoDoubtsKleve/rehopper/releases/latest) page.
