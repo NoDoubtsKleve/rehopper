@@ -1,5 +1,5 @@
 ![Rehopper Icon](assets/rehopper_icon_200x200.png)
-# Rehopper v1.0.0
+# Rehopper v1.1.0
 ###### A Grasshopper plugin to reload canvas.
 
 [![Build_CI](https://github.com/NoDoubtsKleve/rehopper/actions/workflows/build_ci.yml/badge.svg)](https://github.com/NoDoubtsKleve/rehopper/actions/workflows/build_ci.yml)
@@ -18,7 +18,7 @@
 
 ## 📦 Get Rehopper
 
-Download the latest version from the [Yak PackageManager](https://developer.rhino3d.com/guides/yak/what-is-yak/).
+Download the latest version from the [Yak PackageManager](https://developer.rhino3d.com/guides/yak/what-is-yak/) or from the [releases](https://github.com/NoDoubtsKleve/rehopper/releases/latest) page.
 > Paste Command in your Rhino Console
 ```shell
 _-PackageManager Search Rehopper
